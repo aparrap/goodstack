@@ -3,8 +3,8 @@ import { Page } from 'playwright'
 import { Logger } from '@playwright/test'
 import { GoodstackPage } from '../pages/base.page'
 
-test.describe('execute', () => {
-  test(`test`, async ({ page }) => {
+test.describe('Navigation Bar', () => {
+  test(`Navigate to Donations page`, async ({ page }) => {
     let stamp = Date.now()
     let homePage = new GoodstackPage(page)
     await homePage.visit()
