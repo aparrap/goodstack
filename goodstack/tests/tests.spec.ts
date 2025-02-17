@@ -5,6 +5,7 @@ import { GoodstackPage } from '../pages/base.page'
 
 test.describe('execute', () => {
   test(`test`, async ({ page }) => {
+    let stamp = Date.now()
     let homePage = new GoodstackPage(page)
     await homePage.visit()
 
@@ -13,6 +14,6 @@ test.describe('execute', () => {
 
     await expect(page.getByRole('heading', { name: 'Track and manage everything' })).toBeVisible()
 
-    await page.screenshot({ path: 'screenshot.png' })
+    await page.screenshot({ path: 'screenshot_'+stamp+'.png' })
   })
 })
