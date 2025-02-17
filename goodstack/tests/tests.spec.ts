@@ -8,7 +8,6 @@ test.describe('execute', () => {
     let homePage = new GoodstackPage(page)
     await homePage.visit()
 
-    await page.pause()
     await page.getByRole('button', { name: 'Products Arrow down' }).click()
     await page.getByRole('menuitem', { name: 'Donations' }).click()
 
