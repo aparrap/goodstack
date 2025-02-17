@@ -10,7 +10,7 @@ test.describe('execute', () => {
 
     await page.pause()
     await page.getByRole('button', { name: 'Products Arrow down' }).click()
-    await page.getByRole('menuitem', { name: 'Donations Arrow right Send' }).click()
+    await page.getByRole('menuitem', { name: 'Donations' }).click()
 
     await expect(page.getByRole('heading', { name: 'Track and manage everything' })).toBeVisible()
 
