@@ -8,14 +8,11 @@ test.describe('execute', () => {
     let homePage = new GoodstackPage(page)
     await homePage.visit()
 
-    await page.locator('nav').locator('button').filter({ hasText: 'Produts' }).click()
-    await page.locator('nav').locator('li a').filter({ hasText: 'Donations' }).click()
+    await page.pause()
+    await page.getByRole('button', { name: 'Products Arrow down' }).click()
+    await page.getByRole('menuitem', { name: 'Donations Arrow right Send' }).click()
 
-    await page.waitForTimeout(1000)
-
-    const element = await page.locator('h2').filter({hasText: 'Track and manage everything a one place'})
-
-    expect(await element.isVisible()).toBeTruthy()
+    await expect(page.getByRole('heading', { name: 'Track and manage everything' })).toBeVisible()
 
     await page.screenshot({ path: 'screenshot.png' })
   })
