@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test:goodstack": "playwright test goodstack/tests/tests.spec.ts --config=./goodstack/playwright.config.ts",
-    "test:own": "playwright test goodstack/tests/own.spec.ts --config=./goodstack/playwright.config.ts",
-    "test:parallel": "npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}"
+    "test:own": "playwright test goodstack/tests/own.spec.ts --config=./goodstack/playwright.config.ts"
   },
   "author": "Andres Parra",
   "license": "ISC",
