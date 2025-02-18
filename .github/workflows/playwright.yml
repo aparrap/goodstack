@@ -23,7 +23,7 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: test:parallel
+      run: npm run test:parallel
     - name: Upload blob report to GitHub Actions Artifacts
       if: ${{ !cancelled() }}
       uses: actions/upload-artifact@v4
