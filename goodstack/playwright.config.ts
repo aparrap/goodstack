@@ -11,7 +11,7 @@ import { devices } from '@playwright/test'
  * See https://playwright.dev/docs/test-configuration.
  */
 const config: PlaywrightTestConfig = {
-  testDir: '.',
+  testDir: '.tests',
 
   /* Maximum time one test can run for. */
   timeout: process.env.CI ? 60 * 1000 : 30 * 1000,
@@ -29,7 +29,7 @@ const config: PlaywrightTestConfig = {
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 2 : 5,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: process.env.CI ? [['html', { open: 'never' }], ['list']] : 'line',
+  reporter: process.env.CI ? 'blob' : 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
