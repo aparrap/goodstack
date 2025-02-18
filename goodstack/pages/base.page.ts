@@ -33,7 +33,7 @@ export class GoodstackPage {
 
   // INFO: ACTIONS
   public async visit(url?: string): Promise<any> {
-    return this.page.goto(this.url, { waitUntil: 'networkidle' })
+    return this.page.goto(this.url)
   }
 
   async clickMenuItem(menuItem: string) {
