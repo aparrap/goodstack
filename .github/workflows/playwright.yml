@@ -8,6 +8,9 @@ jobs:
   playwright-tests:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./goodstack
     strategy:
       fail-fast: false
       matrix:
@@ -29,7 +32,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: blob-report-${{ matrix.shardIndex }}
-        path: blob-report
+        path: goodstack/blob-report
         retention-days: 5
 
   merge-reports:
