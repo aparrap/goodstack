@@ -29,6 +29,12 @@ Before you get started, ensure you have the following:
    npm run test:goodstack
    ```
 
+   and 
+
+   ```bash
+   npm run test:own
+   ```
+
 For more details, you can check out the [Playwright Documentation](https://playwright.dev/).
 
 ## Submission Guidelines
