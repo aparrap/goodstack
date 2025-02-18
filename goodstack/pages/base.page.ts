@@ -8,7 +8,7 @@ export class GoodstackPage {
 
   constructor(page: Page) {
     this.page = page
-    this.url = '/'
+    this.url = 'https://goodstack.io/'
   }
 
   // INFO: LOCATORS
