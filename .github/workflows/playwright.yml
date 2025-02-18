@@ -8,9 +8,6 @@ jobs:
   playwright-tests:
     timeout-minutes: 60
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./goodstack
     strategy:
       fail-fast: false
       matrix:
@@ -27,13 +24,13 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       run: npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
-      
+
     - name: Upload blob report to GitHub Actions Artifacts
       if: ${{ !cancelled() }}
       uses: actions/upload-artifact@v4
       with:
         name: blob-report-${{ matrix.shardIndex }}
-        path: goodstack/blob-report
+        path: blob-report
         retention-days: 5
 
   merge-reports:
